@@ -10,9 +10,11 @@ namespace PlayerComponents
         private const string VerticalAxis = "Vertical";
         
         [SerializeField] private KeyCode _messageKey = KeyCode.Space;
+        [SerializeField] private KeyCode _spawnCubeKey = KeyCode.F;
 
         public event Action<float, float> Moving;
         public event Action MessageKeyPressed;
+        public event Action SpawnCubePressed;
 
         private void Update()
         {
@@ -26,7 +28,10 @@ namespace PlayerComponents
                 Moving?.Invoke(horizontalInput, verticalInput); 
 
             if (Input.GetKeyDown(_messageKey))
-                MessageKeyPressed?.Invoke(); 
+                MessageKeyPressed?.Invoke();
+
+            if (Input.GetKeyDown(_spawnCubeKey))
+                SpawnCubePressed?.Invoke();
         }
     }
 }

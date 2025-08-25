@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 7950917204610978236}
   - component: {fileID: 1375383298972657389}
   - component: {fileID: 2333460822710999946}
+  - component: {fileID: 735871456966652894}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -387,6 +388,25 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _messageKey: 32
+  _spawnCubeKey: 102
+--- !u!114 &735871456966652894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543337408943191942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8980677cde7566647bd8be8c5c309153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _playerInput: {fileID: 2333460822710999946}
+  _cubePrefab: {fileID: -379172224550548539, guid: d1b63050b99396f46abad51f03ddfb15, type: 3}
+  _spawnDistance: 2
 --- !u!1001 &6847805501243188434
 PrefabInstance:
   m_ObjectHideFlags: 0
