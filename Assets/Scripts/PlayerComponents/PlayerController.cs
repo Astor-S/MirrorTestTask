@@ -21,8 +21,19 @@ namespace PlayerComponents
 
         private void Move(float horizontalInput, float verticalInput)
         {
+            if(isOwned == false)
+                return;
+            
             Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput;
-            _characterController.Move(move * _moveSpeed * Time.deltaTime);
+            Command(move);
         }
+
+        [Command]
+        private void Command(Vector3 move) =>
+            RPCMovement(move);
+
+        [ClientRpc]
+        private void RPCMovement(Vector3 move) =>
+            _characterController.Move(move * _moveSpeed * Time.deltaTime);
     }
 }
